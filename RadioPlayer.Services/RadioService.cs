@@ -9,7 +9,7 @@ public class RadioService(HttpClient httpClient, IDnsService dnsService) : IRadi
     public async Task<List<Country>> GetCountriesAsync()
     {
         var response = await httpClient.GetStringAsync($"https://{dnsService.ApiUrl}/json/countries");
-        var countries= JsonConvert.DeserializeObject<List<Country>>(response);
+        var countries = JsonConvert.DeserializeObject<List<Country>>(response);
         if (countries == null)
         {
             throw new Exception("Cannot obtain list of countries");
@@ -22,7 +22,7 @@ public class RadioService(HttpClient httpClient, IDnsService dnsService) : IRadi
     {
         var url = $"https://{dnsService.ApiUrl}/json/stations/bycountry/{country}";
         var response = await httpClient.GetStringAsync(url);
-        var stations= JsonConvert.DeserializeObject<List<RadioStation>>(response);
+        var stations = JsonConvert.DeserializeObject<List<RadioStation>>(response);
         if (stations == null)
         {
             throw new Exception("Cannot obtain list of stations");
@@ -30,4 +30,19 @@ public class RadioService(HttpClient httpClient, IDnsService dnsService) : IRadi
 
         return stations;
     }
+
+    public async Task<byte[]?> DownloadIconFromUrlAsync(string url)
+    {
+        if (string.IsNullOrEmpty(url)) return null;
+        try
+        {
+            using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(5));
+            return await httpClient.GetByteArrayAsync(url, cts.Token);
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
+    }
+
 }

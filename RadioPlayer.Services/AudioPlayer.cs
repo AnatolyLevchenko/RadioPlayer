@@ -13,6 +13,7 @@ public class AudioPlayer(AsyncRetryPolicy retryPolicy) : IAudioPlayer
     {
         try
         {
+            StopStream();
             await retryPolicy.ExecuteAsync(async () =>
             {
                 await Task.Run(() =>

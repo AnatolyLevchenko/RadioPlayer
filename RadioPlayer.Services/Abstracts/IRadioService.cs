@@ -6,5 +6,6 @@ public interface IRadioService
 {
     Task<List<Country>> GetCountriesAsync();
     Task<List<RadioStation>> GetStationsByCountryAsync(string country);
+    Task<byte[]?> DownloadIconFromUrlAsync(string url);
 
 }
