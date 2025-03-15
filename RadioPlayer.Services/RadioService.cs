@@ -22,6 +22,12 @@ public class RadioService(HttpClient httpClient, IDnsService dnsService) : IRadi
     {
         var url = $"https://{dnsService.ApiUrl}/json/stations/bycountry/{country}";
         var response = await httpClient.GetStringAsync(url);
-        return JsonConvert.DeserializeObject<List<RadioStation>>(response);
+        var stations= JsonConvert.DeserializeObject<List<RadioStation>>(response);
+        if (stations == null)
+        {
+            throw new Exception("Cannot obtain list of stations");
+        }
+
+        return stations;
     }
 }

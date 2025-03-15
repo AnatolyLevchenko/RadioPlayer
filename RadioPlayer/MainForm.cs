@@ -29,16 +29,28 @@ public partial class MainForm : Form
         }
     }
 
-    private void btnPlay_Click(object sender, EventArgs e)
+    private async void btnPlay_Click(object sender, EventArgs e)
     {
-        if (lbStations.SelectedItem is RadioStation selectedStation)
-        {
-            _audioPlayer.PlayStream(selectedStation.Url);
-        }
-    }
+        if (lbStations.SelectedItem is not RadioStation selectedStation) return;
 
+        try
+        {
+            await _audioPlayer.PlayStreamAsync(selectedStation.Url);
+        }
+        catch (Exception exception)
+        {
+            MessageBox.Show($"Cannot play the strem {selectedStation.Url}. {exception.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+    }
     private void btnStop_Click(object sender, EventArgs e)
     {
-       _audioPlayer.StopStream();
+        _audioPlayer.StopStream();
+    }
+
+    private void cbVolumeSlider_VolumeChanged(object sender, EventArgs e)
+    {
+        _audioPlayer.SetVolume(cbVolumeSlider.Volume);
+ 
     }
 }

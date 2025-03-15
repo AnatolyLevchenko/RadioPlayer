@@ -2,6 +2,7 @@
 
 public interface IAudioPlayer
 {
-    void PlayStream(string streamUrl);
+    Task PlayStreamAsync(string streamUrl);
     void StopStream();
+    void SetVolume(float volume);
 }

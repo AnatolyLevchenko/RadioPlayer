@@ -21,6 +21,8 @@
             label1 = new Label();
             label2 = new Label();
             btnStop = new Button();
+            cbVolumeSlider = new NAudio.Gui.VolumeSlider();
+            label3 = new Label();
             SuspendLayout();
             // 
             // cbCountries
@@ -53,7 +55,7 @@
             btnPlay.BackColor = Color.FromArgb(100, 100, 255);
             btnPlay.FlatStyle = FlatStyle.Flat;
             btnPlay.ForeColor = Color.White;
-            btnPlay.Location = new Point(23, 249);
+            btnPlay.Location = new Point(12, 300);
             btnPlay.Name = "btnPlay";
             btnPlay.Size = new Size(172, 41);
             btnPlay.TabIndex = 4;
@@ -86,7 +88,7 @@
             btnStop.BackColor = Color.FromArgb(192, 64, 0);
             btnStop.FlatStyle = FlatStyle.Flat;
             btnStop.ForeColor = Color.White;
-            btnStop.Location = new Point(249, 249);
+            btnStop.Location = new Point(212, 300);
             btnStop.Name = "btnStop";
             btnStop.Size = new Size(172, 41);
             btnStop.TabIndex = 7;
@@ -94,12 +96,32 @@
             btnStop.UseVisualStyleBackColor = false;
             btnStop.Click += btnStop_Click;
             // 
+            // cbVolumeSlider
+            // 
+            cbVolumeSlider.Location = new Point(12, 263);
+            cbVolumeSlider.Name = "cbVolumeSlider";
+            cbVolumeSlider.Size = new Size(476, 20);
+            cbVolumeSlider.TabIndex = 8;
+            cbVolumeSlider.VolumeChanged += cbVolumeSlider_VolumeChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label3.Location = new Point(12, 240);
+            label3.Name = "label3";
+            label3.Size = new Size(62, 20);
+            label3.TabIndex = 9;
+            label3.Text = "Volume";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LavenderBlush;
-            ClientSize = new Size(500, 350);
+            ClientSize = new Size(513, 395);
+            Controls.Add(label3);
+            Controls.Add(cbVolumeSlider);
             Controls.Add(btnStop);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -122,5 +144,7 @@
         private Label label1;
         private Label label2;
         private Button btnStop;
+        private NAudio.Gui.VolumeSlider cbVolumeSlider;
+        private Label label3;
     }
 }
