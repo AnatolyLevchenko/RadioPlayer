@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioPlayer", "RadioPlayer\RadioPlayer.csproj", "{A04F9416-8839-4B8F-A61B-C74B49986547}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioPlayer.Domain", "RadioPlayer.Domain\RadioPlayer.Domain.csproj", "{05483034-FBAB-4727-8926-0241B5A48B0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadioPlayer.Services", "RadioPlayer.Services\RadioPlayer.Services.csproj", "{EDC22B05-C9A3-4F90-93D4-37E7E3A9B53F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A04F9416-8839-4B8F-A61B-C74B49986547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A04F9416-8839-4B8F-A61B-C74B49986547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A04F9416-8839-4B8F-A61B-C74B49986547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A04F9416-8839-4B8F-A61B-C74B49986547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05483034-FBAB-4727-8926-0241B5A48B0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05483034-FBAB-4727-8926-0241B5A48B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05483034-FBAB-4727-8926-0241B5A48B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05483034-FBAB-4727-8926-0241B5A48B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDC22B05-C9A3-4F90-93D4-37E7E3A9B53F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDC22B05-C9A3-4F90-93D4-37E7E3A9B53F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDC22B05-C9A3-4F90-93D4-37E7E3A9B53F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDC22B05-C9A3-4F90-93D4-37E7E3A9B53F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F55E405F-CD3B-47DD-AA48-FB4C048EE9E0}
+	EndGlobalSection
+EndGlobal

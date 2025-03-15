@@ -1,0 +1,126 @@
+﻿namespace RadioPlayer
+{
+    partial class MainForm
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            cbCountries = new ComboBox();
+            lbStations = new ListBox();
+            btnPlay = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            btnStop = new Button();
+            SuspendLayout();
+            // 
+            // cbCountries
+            // 
+            cbCountries.BackColor = Color.FromArgb(45, 45, 48);
+            cbCountries.DisplayMember = "Name";
+            cbCountries.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbCountries.ForeColor = Color.White;
+            cbCountries.FormattingEnabled = true;
+            cbCountries.Location = new Point(12, 32);
+            cbCountries.Name = "cbCountries";
+            cbCountries.Size = new Size(476, 28);
+            cbCountries.TabIndex = 0;
+            cbCountries.SelectedIndexChanged += cbCountries_SelectedIndexChanged;
+            // 
+            // lbStations
+            // 
+            lbStations.BackColor = Color.FromArgb(45, 45, 48);
+            lbStations.BorderStyle = BorderStyle.FixedSingle;
+            lbStations.DisplayMember = "Name";
+            lbStations.ForeColor = Color.White;
+            lbStations.FormattingEnabled = true;
+            lbStations.Location = new Point(12, 86);
+            lbStations.Name = "lbStations";
+            lbStations.Size = new Size(476, 142);
+            lbStations.TabIndex = 1;
+            // 
+            // btnPlay
+            // 
+            btnPlay.BackColor = Color.FromArgb(100, 100, 255);
+            btnPlay.FlatStyle = FlatStyle.Flat;
+            btnPlay.ForeColor = Color.White;
+            btnPlay.Location = new Point(23, 249);
+            btnPlay.Name = "btnPlay";
+            btnPlay.Size = new Size(172, 41);
+            btnPlay.TabIndex = 4;
+            btnPlay.Text = "Play";
+            btnPlay.UseVisualStyleBackColor = false;
+            btnPlay.Click += btnPlay_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(76, 20);
+            label1.TabIndex = 5;
+            label1.Text = "Countries";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label2.Location = new Point(12, 63);
+            label2.Name = "label2";
+            label2.Size = new Size(66, 20);
+            label2.TabIndex = 6;
+            label2.Text = "Stations";
+            // 
+            // btnStop
+            // 
+            btnStop.BackColor = Color.FromArgb(192, 64, 0);
+            btnStop.FlatStyle = FlatStyle.Flat;
+            btnStop.ForeColor = Color.White;
+            btnStop.Location = new Point(249, 249);
+            btnStop.Name = "btnStop";
+            btnStop.Size = new Size(172, 41);
+            btnStop.TabIndex = 7;
+            btnStop.Text = "Stop";
+            btnStop.UseVisualStyleBackColor = false;
+            btnStop.Click += btnStop_Click;
+            // 
+            // MainForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LavenderBlush;
+            ClientSize = new Size(500, 350);
+            Controls.Add(btnStop);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(btnPlay);
+            Controls.Add(lbStations);
+            Controls.Add(cbCountries);
+            ForeColor = SystemColors.ActiveCaption;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "MainForm";
+            Text = "Radio Player";
+            Load += MainForm_Load;
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        private ComboBox cbCountries;
+        private ListBox lbStations;
+        private Button btnPlay;
+        private Label label1;
+        private Label label2;
+        private Button btnStop;
+    }
+}

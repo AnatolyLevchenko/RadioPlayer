@@ -1,0 +1,27 @@
+﻿using Newtonsoft.Json;
+using RadioPlayer.Domain;
+using RadioPlayer.Services.Abstracts;
+
+namespace RadioPlayer.Services;
+
+public class RadioService(HttpClient httpClient, IDnsService dnsService) : IRadioService
+{
+    public async Task<List<Country>> GetCountriesAsync()
+    {
+        var response = await httpClient.GetStringAsync($"https://{dnsService.ApiUrl}/json/countries");
+        var countries= JsonConvert.DeserializeObject<List<Country>>(response);
+        if (countries == null)
+        {
+            throw new Exception("Cannot obtain list of countries");
+        }
+
+        return countries.OrderBy(x => x.Name).ToList();
+    }
+
+    public async Task<List<RadioStation>> GetStationsByCountryAsync(string country)
+    {
+        var url = $"https://{dnsService.ApiUrl}/json/stations/bycountry/{country}";
+        var response = await httpClient.GetStringAsync(url);
+        return JsonConvert.DeserializeObject<List<RadioStation>>(response);
+    }
+}
